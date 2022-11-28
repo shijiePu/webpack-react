@@ -1,0 +1,20 @@
+{
+  "name": "webpack-react",
+  "version": "0.1.0",
+  "private": true,
+  "description": "windowns手动搭建一个react项目",
+  "main": "index.js",
+  "devDependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "scripts": {
+    "dev": "",
+    "build": ""
+  },
+  "author": "psj",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.0.3"
+  }
+}
