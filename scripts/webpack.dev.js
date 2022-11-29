@@ -34,6 +34,23 @@ module.exports = merge(common, {
         ],
         // 排除 node_modules 目录
         exclude: /node_modules/,
+      },
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["autoprefixer"]],
+              },
+            },
+          },
+          "less-loader",
+        ],
+        include: /node_modules/,
       }
     ]
   },

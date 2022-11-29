@@ -2,6 +2,7 @@ const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin")
 const common = require("./webpack.common.js");
+const { sassFalse } = require("sass");
 
 
 module.exports = merge(common, {
@@ -40,6 +41,23 @@ module.exports = merge(common, {
                 ],
                 exclude: /node_modules/,
             },
+            {
+                test: /\.less$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                  "css-loader",
+                  {
+                    loader: "postcss-loader",
+                    options: {
+                      postcssOptions: {
+                        plugins: [["autoprefixer"]],
+                      },
+                    },
+                  },
+                  "less-loader",
+                ],
+                include: /node_modules/,
+              }
         ],
     },
     plugins: [
