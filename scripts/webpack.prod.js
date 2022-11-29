@@ -1,6 +1,8 @@
 const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin")
 const common = require("./webpack.common.js");
+
 
 module.exports = merge(common, {
     mode: "production",
@@ -8,6 +10,7 @@ module.exports = merge(common, {
         minimize: true,
         minimizer: [
             "...",
+            // webpack打包时自动去除console.log
             new TerserPlugin({
                 terserOptions: {
                     format: {

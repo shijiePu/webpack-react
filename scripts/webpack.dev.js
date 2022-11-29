@@ -24,14 +24,18 @@ module.exports = merge(common, {
               postcssOptions: {
                 plugins: [["autoprefixer"]],
               },
+              // module:{
+              //   auto:true,
+              //   localIdentName:"[path][name]__[local]"
+              // }
             },
           },
           "sass-loader",
         ],
         // 排除 node_modules 目录
         exclude: /node_modules/,
-      },
-    ],
+      }
+    ]
   },
   stats: "errors-only", // Webpack 在编译的时候只输出错误日志，终端更清爽
 });

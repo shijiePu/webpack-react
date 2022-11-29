@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 const pkgJSON = require("../package.json");
 console.log("process.env.NODE_ENV: ", process.env.NODE_ENV);
 
@@ -78,5 +79,6 @@ module.exports = {
         new ProgressBarPlugin({
             format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
         }),
+        new ArcoWebpackPlugin(),
     ],
 };
