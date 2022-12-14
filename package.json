@@ -65,5 +65,16 @@
       "iOS 9",
       "last 3 iOS versions"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shijiePu/webpack-react.git"
+  },
+  "keywords": [
+    "666666git"
+  ],
+  "bugs": {
+    "url": "https://github.com/shijiePu/webpack-react/issues"
+  },
+  "homepage": "https://github.com/shijiePu/webpack-react#readme"
 }
