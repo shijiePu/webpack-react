@@ -1,13 +1,26 @@
-import { RouteObject, useParams } from "react-router-dom"
+import { Outlet, RouteObject, useParams } from "react-router-dom"
 import HomePage from "@/pages/home";
 import ArcoDesign from "@/pages/ArcoDesign";
 import AntdDesign from "@/pages/antDesign";
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
+import { Children } from "react";
 
 const Link_Config = [
     {
-        name: 'antdDesignChild', icon: UserOutlined, id: 'antdDesignChild', children: [
-            { path: '/antdDesign/child', label: "antdDesignChild", id: 'antdChild' },
+        name: 'antdDesignChild',
+        icon: UserOutlined,
+        id: 'antdDesignChild',
+        children: [
+            {
+                path: '/antdDesign/child/:asjkdhjkas',
+                label: "antdDesignChild",
+                id: 'antdChild'
+            },
+            {
+                path: '/antdDesign/child2',
+                label: "Child2",
+                id: 'antdChild2'
+            },
         ],
     },
     {
@@ -38,11 +51,11 @@ const Link_Config = [
 const ROUTER_CONFIG: RouteObject[] = [
     {
         path: "/",
-        // element: <HomePage />,
+        element: <HomePage />,
         children: [
             {
-                path: "/",
-                element: <HomePage />
+                path: "/test",
+                element: <>test</>
             },
             {
                 path: "/ArcoDesign",
@@ -50,23 +63,15 @@ const ROUTER_CONFIG: RouteObject[] = [
             },
             {
                 path: "antdDesign",
-                element: <AntdDesign />,//todo  注释报错
+                element: <AntdDesign />,//todo  注释报错 : pamams报错？
                 children: [
                     {
                         // index: true,
-                        path: "child",
-                        //等效于 path: "/antdDesign/child"
-                        // 只要不以/开头都会被看做是相对路径，
-                        // 最终的匹配结果都会和父路由的path相结合
-                        // detail/:id/:title
-                        element: <AntdDesignChild />
+                        path: "child/:user",
+                        element: <AntdDesignChild />,
                     },
                     {
                         path: "child2",
-                        //等效于 path: "/antdDesign/child"
-                        // 只要不以/开头都会被看做是相对路径，
-                        // 最终的匹配结果都会和父路由的path相结合
-                        // detail/:id/:title
                         element: <AntdDesignChild2 />
                     }
                 ]
@@ -81,22 +86,40 @@ const ROUTER_CONFIG: RouteObject[] = [
     },
 ];
 
-function AboutPage() {
+export function AboutPage() {
     return (<>i am AboutPage</>)
 }
 
-function AntdDesignChild() {
+export function AntdDesignChild() {
     // todo  没有匹配到该组件   顺到/antdDesign组件了
-    let params = useParams();
-    console.log('AntdDsignChild params ', params);
-    return (<>i am AntdDesgnChild{params}</>)
+    // did
+    let { user } = useParams();
+    console.log('AntdDsignChild params user ', user);
+    return (<>
+        <h1>
+            i am AntdDesgnChild</h1>
+        <h1 style={{ color: 'red' }}>
+            my param is {user}
+        </h1>
+    </>)
 }
 
-function AntdDesignChild2() {
+export function AntdDesignChildParam() {
+    let { user } = useParams();
+    console.log('AntdDsignChild params user ', user);
+    return (<>
+        <h1><Outlet /></h1>
+
+
+    </>)
+}
+
+export function AntdDesignChild2() {
     // todo  没有匹配到该组件   顺到/antdDesign组件了
+    // did
     let params = useParams();
     console.log('AntdDsignChild params ', params);
-    return (<>i am AntdDesgnChild{params}</>)
+    return (<>i am AntdDesgnChild</>)
 }
 
 

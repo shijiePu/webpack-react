@@ -1,11 +1,13 @@
 import { Button } from 'antd';
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     console.log('homePage render~~')
     return (
         <>
-            HELLO WORLD!!
+            HomePage
             <Button type="primary">antd 按钮</Button>
+            <Outlet/>
         </>
     )
 }

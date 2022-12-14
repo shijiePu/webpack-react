@@ -1,11 +1,31 @@
 import React from "react"
-import { useRoutes, Outlet, matchRoutes, Link } from "react-router-dom";
-import { ROUTER_CONFIG, Link_Config } from "./config/router";
+import { useRoutes, Routes, Route, Outlet, matchRoutes, Link } from "react-router-dom";
+import { ROUTER_CONFIG, Link_Config, AboutPage, AntdDesignChild, AntdDesignChild2 } from "./config/router";
 import { Layout, Menu } from 'antd';
+import HomePage from "@/pages/home";
+import ArcoDesign from "@/pages/ArcoDesign";
+import AntdDesign from "@/pages/antDesign";
 
 import "./app.scss"
 const { Header, Footer, Sider, Content } = Layout;
 
+
+const RRouter = () => {
+  return (
+    <Routes>
+      <Route path="/antdDesign" element={<AntdDesign />}>
+        <Route
+          path="child"
+          element={<AntdDesignChild />}
+        />
+        <Route
+          path="child2"
+          element={<AntdDesignChild2 />}
+        />
+      </Route>
+    </Routes>
+  );
+}
 
 function App() {
   const appRoutesElement = useRoutes(ROUTER_CONFIG);
@@ -52,9 +72,13 @@ function App() {
           <Content className="contene-contain">
             <h1>Welcome to React Router!</h1>
             {appRoutesElement}
+            {/* <RRouter /> */}
           </Content>
           <Footer>
-            1111<Outlet />
+            <h1 style={{color:"red"}}>
+            need todo how to use Outlet!
+            </h1>
+            <Outlet />
           </Footer>
         </Layout>
       </Layout>
