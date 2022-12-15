@@ -1,5 +1,5 @@
 import React from "react"
-import { useRoutes, Routes, Route, Outlet, matchRoutes, Link } from "react-router-dom";
+import { useRoutes, Routes, Route, Outlet, useLocation, matchRoutes, Link } from "react-router-dom";
 import { ROUTER_CONFIG, Link_Config } from "./config/router";
 import { Layout, Menu } from 'antd';
 import { Teams } from "./config/router2"
@@ -51,6 +51,15 @@ function App() {
       })
     }
   })
+
+  const location = useLocation()
+  // 使用matchRoutes获取匹配到的路由，依次是从父到子路由
+  let matches = matchRoutes(ROUTER_CONFIG, { pathname: location.pathname });
+  console.log('通过matchRoutes得到matches？？？', { matches,location });
+
+  const path = matches?.map(match=>{})
+
+
 
   return (
     <div className="App">
