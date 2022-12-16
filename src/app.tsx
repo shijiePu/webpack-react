@@ -1,13 +1,16 @@
 import React from "react"
-import { useRoutes, Routes, Route, Outlet, useLocation, matchRoutes, Link } from "react-router-dom";
+import { useRoutes, Routes, Route, Outlet, useLocation, matchRoutes, Link, Navigate } from "react-router-dom";
 import { ROUTER_CONFIG, Link_Config } from "./config/router";
 import { Layout, Menu } from 'antd';
 import { Teams } from "./config/router2"
+import PathInfo from "@/pages/HeaderInfo";
+
 
 import "./app.scss"
 const { Header, Footer, Sider, Content } = Layout;
 
-const RRouter = () => {
+// 命令式
+const RouterNormal = () => {
   return (
     <Routes>
       {/* 我们不一定要全部将路由定义在最外层.
@@ -27,10 +30,21 @@ const RRouter = () => {
   );
 }
 
-function App() {
+// 声明式
+const RoutesV6 = () => {
   // 于在useRoutes中调用RouteContext的解释
   // 这个是只会调用一次useRoutes吗
   const appRoutesElement = useRoutes(ROUTER_CONFIG);
+  return <>{appRoutesElement}</>
+}
+
+
+
+// Navigate  可以在子导航中 实现相对路径的跳转
+// 一般在子路由中使用？  
+
+function App() {
+
   // const menuItems = matchRoutes()
   // todo  通过matchRoutes实现拿到导航栏的数据？
 
@@ -55,11 +69,7 @@ function App() {
   const location = useLocation()
   // 使用matchRoutes获取匹配到的路由，依次是从父到子路由
   let matches = matchRoutes(ROUTER_CONFIG, { pathname: location.pathname });
-  console.log('通过matchRoutes得到matches？？？', { matches,location });
-
-  const path = matches?.map(match=>{})
-
-
+  console.log('通过matchRoutes得到matches？？？', { matches, location });
 
   return (
     <div className="App">
@@ -78,12 +88,14 @@ function App() {
           </Menu>
         </Sider>
         <Layout className="app-content">
-          <Header className="app-header">Header</Header>
+          <Header className="app-header">
+            <PathInfo routerConfig={ROUTER_CONFIG} />
+          </Header>
           <Content className="contene-contain">
-            {appRoutesElement}
+            <RoutesV6 />
           </Content>
           <Footer className="app-footer">
-            <RRouter />
+            <RouterNormal />
           </Footer>
         </Layout>
       </Layout>

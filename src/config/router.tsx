@@ -2,6 +2,7 @@ import { Outlet, RouteObject, useParams } from "react-router-dom"
 import HomePage from "@/pages/home";
 import ArcoDesign from "@/pages/ArcoDesign";
 import AntdDesign from "@/pages/antDesign";
+import NotFound from "@/pages/NotFound";
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 
 const Link_Config = [
@@ -40,7 +41,7 @@ const Link_Config = [
     },
     {
         name: 'about', icon: LaptopOutlined, id: 'about', children: [
-            { path: '/teams/:new', label: "teamIdIsNew", id: 'teamIdisnew' },
+            { path: '/teams/Idisnew', label: "teamIdIsNew", id: 'teamIdisnew' },
             { path: '/teams/new', label: "newTeam", id: 'newTeam' },
         ],
     },
@@ -88,7 +89,7 @@ const ROUTER_CONFIG: RouteObject[] = [
     },
     {
         path: "*",
-        element: <>404 Not Found!</>,
+        element: <NotFound />,
     },
 ];
 

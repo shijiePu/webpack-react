@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useMatch } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 const Home = () => {
     const location = useLocation()
@@ -14,6 +14,7 @@ const Home = () => {
                     (公共区域) message：{location.pathname}
                 </div>
                 <div className="border">
+                    我是首页
                     {/* outlet可以将所有匹配到的子路由展示出来 */}
                     {/* 没有outlet的话默认只会匹配到优先级最高的路由 */}
                     {/* 而当前匹配到所有子路由会在routeContext 的value中储存 */}
