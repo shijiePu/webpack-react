@@ -26,7 +26,7 @@ const notFound = () => {
         <Button onClick={navigateGoIndex}>Navigate 回到首页</Button>
 
         {/* 
-            Navigate 有个属性 replace
+            Navigate 有4个属性 { to, replace, state, relative }
             replace=false : replace方式跳转 
             replace=true : push方式跳转（Link组件也是这个方式）
         */}

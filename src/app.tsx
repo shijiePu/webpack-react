@@ -4,9 +4,8 @@ import { ROUTER_CONFIG, Link_Config } from "./config/router";
 import { Layout, Menu } from 'antd';
 import { Teams } from "./config/router2"
 import PathInfo from "@/pages/HeaderInfo";
-
-
 import "./app.scss"
+
 const { Header, Footer, Sider, Content } = Layout;
 
 // 命令式

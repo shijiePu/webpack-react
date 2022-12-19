@@ -2,10 +2,23 @@ import { Outlet, RouteObject, useParams } from "react-router-dom"
 import HomePage from "@/pages/home";
 import ArcoDesign from "@/pages/ArcoDesign";
 import AntdDesign from "@/pages/antDesign";
+import GroupComponentTest from "@/pages/groupComponentTest";
 import NotFound from "@/pages/NotFound";
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 
 const Link_Config = [
+    {
+        name: 'unitDemo',
+        icon: UserOutlined,
+        id: 'unitDemo',
+        children: [
+            {
+                path: '/unitDemo/Group',
+                label: "GroupComponent",
+                id: 'GroupComponent'
+            },
+        ],
+    },
     {
         name: 'antdDesignChild',
         icon: UserOutlined,
@@ -53,8 +66,17 @@ const Link_Config = [
 const ROUTER_CONFIG: RouteObject[] = [
     {
         path: "/",
-        element: <HomePage />,
+        // element: <HomePage />,
         children: [
+            {
+                path:"unitDemo",
+                children:[
+                    {
+                        path:"Group",
+                        element:<GroupComponentTest />
+                    }
+                ],
+            },
             {
                 path: "/ArcoDesign",
                 element: <ArcoDesign />
