@@ -15,7 +15,7 @@ function GroupComponentTest() {
     return (
         <Group >
             <GroupItem author={authorContext.author} name="《React进阶实践指南》" />
-            {/* <GroupItem author={authorContext.author} name="《React18进阶实践指南》" /> */}
+            <GroupItem author={authorContext.author} name="《React18进阶实践指南》" />
         </Group>
     )
 }
