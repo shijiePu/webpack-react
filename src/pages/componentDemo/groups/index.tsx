@@ -1,4 +1,4 @@
-import { Group, GroupItem } from "@/components/groups";
+import { Group, GroupItem, Text } from "@/components/groups";
 import { GroupContext } from "@/components/context/groupContext"
 import { useContext } from "react";
 // 本demo做了什么？
@@ -16,6 +16,16 @@ function GroupComponentTest() {
         <Group >
             <GroupItem author={authorContext.author} name="《React进阶实践指南》" />
             <GroupItem author={authorContext.author} name="《React18进阶实践指南》" />
+            
+            {() => <GroupItem author={authorContext.author} name="《React18333》" />}
+            {/* 
+                这个方式不会渲染出来 
+                Warning: Functions are not valid as a React child.
+                封装层添加一个校验达到兼容这种渲染方式 √
+                React.Children.forEach 会忽略function的形式
+            */}
+
+            <Text text={'...'} />
         </Group>
     )
 }
