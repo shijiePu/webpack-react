@@ -3,7 +3,5 @@ import { Author } from "./author";
 
 export const author = new Author("psj")
 //new 一个Author对象 作为provider的initValue
-export const GroupContext = /*#__PURE__*/React.createContext(
-    { author }
-);
+export const GroupContext = /*#__PURE__*/React.createContext(author);
 

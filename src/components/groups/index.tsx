@@ -7,11 +7,15 @@ import { GroupContext, author } from '../context/groupContext'
 // 隐式注入props
 export function Group(props: any) {
     console.log(author);
-    return /*#__PURE__*/React.createElement(GroupContext.Provider, {
-        value: {
-            author
-        },
-    }, <Wrap>{...props.children}</Wrap>);
+    return <GroupContext.Provider value={author}>
+        <Wrap>{...props.children}</Wrap>
+    </GroupContext.Provider>
+    // /*#__PURE__*/React.createElement(GroupContext.Provider, {
+    //     value: {
+    //         author
+    //     },
+    // }, <Wrap>{...props.children}</Wrap>);
+
 }
 
 export function Wrap(props: any) {
@@ -41,7 +45,10 @@ export function Text(props: any) {
 }
 
 export function GroupItem(props: any) {
+    console.log({ props });
     const { author, name } = props;
+    console.log({ author, name });
+    
 
     const onClick = () => {
         console.log('onClick', author);

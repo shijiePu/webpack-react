@@ -14,10 +14,10 @@ function GroupComponentTest() {
 
     return (
         <Group >
-            <GroupItem author={authorContext.author} name="《React进阶实践指南》" />
-            <GroupItem author={authorContext.author} name="《React18进阶实践指南》" />
+            <GroupItem author={authorContext} name="《React进阶实践指南》" />
+            <GroupItem author={authorContext} name="《React18进阶实践指南》" />
             
-            {() => <GroupItem author={authorContext.author} name="《React18333》" />}
+            {() => <GroupItem author={authorContext} name="《React18333》" />}
             {/* 
                 这个方式不会渲染出来 
                 Warning: Functions are not valid as a React child.
