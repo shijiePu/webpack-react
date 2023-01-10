@@ -1,5 +1,5 @@
 // 封装一个组件
-import React, { useContext, useMemo, useState } from "react"
+import React, { useState } from "react"
 import "./index.scss"
 import { Button } from "antd"
 import { GroupContext, author } from '../context/groupContext'
@@ -10,12 +10,6 @@ export function Group(props: any) {
     return <GroupContext.Provider value={author}>
         <Wrap>{...props.children}</Wrap>
     </GroupContext.Provider>
-    // /*#__PURE__*/React.createElement(GroupContext.Provider, {
-    //     value: {
-    //         author
-    //     },
-    // }, <Wrap>{...props.children}</Wrap>);
-
 }
 
 export function Wrap(props: any) {
@@ -48,7 +42,7 @@ export function GroupItem(props: any) {
     console.log({ props });
     const { author, name } = props;
     console.log({ author, name });
-    
+
 
     const onClick = () => {
         console.log('onClick', author);
