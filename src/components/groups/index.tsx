@@ -14,10 +14,7 @@ export function Group(props: any) {
 
 export function Wrap(props: any) {
     // todo  如何给所有children添加一个 callback
-    // copy 文件
-
     const newChildren: React.ReactElement[] = []
-
     React.Children.forEach(props.children, (item: any, index) => {
         //displayName todo
         console.log({ item, index });

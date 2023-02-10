@@ -7,7 +7,7 @@ import TabsDemo from "@/pages/componentDemo/tabs";
 
 import NotFound from "@/pages/NotFound";
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-
+import Login from "@/pages/login";
 const Link_Config = [
     {
         name: 'unitDemo',
@@ -52,7 +52,7 @@ const Link_Config = [
                 id: 'ArcoDesign'
             },
             {
-                path: '/antdDesign', label: "antdDesign",
+                path: '/ArcoDesign', label: "antdDesign",
                 id: 'antdDesign'
             },
         ],
@@ -73,8 +73,11 @@ const Link_Config = [
 const ROUTER_CONFIG: RouteObject[] = [
     {
         path: "/",
-        // element: <HomePage />,
         children: [
+            {
+                path:"login",
+                element:<Login />
+            },
             {
                 path:"unitDemo",
                 children:[
@@ -97,7 +100,7 @@ const ROUTER_CONFIG: RouteObject[] = [
             // 否则按照react-router 的路由匹配方式是无法匹配上内部嵌套的子路由的 
             //   <Route path="/teams/*" element={<Teams />} />
             {
-                path: "antdDesign",
+                path: "/antdDesign",
                 element: <AntdDesign />,
                 children: [
                     {

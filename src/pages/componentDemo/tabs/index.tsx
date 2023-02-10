@@ -13,6 +13,7 @@ const TabsDemo = () => {
     return (<Tabs>
         <TabItem activeName='tab1' element={<Tab1 />} />
         <TabItem activeName='tab2' element={<Tab2 />} />
+        <TabItem activeName='tab3' element={<Tab3 />} />
     </Tabs>)
 }
 
@@ -22,6 +23,10 @@ const Tab1 = () => {
 
 const Tab2 = () => {
     return (<>TabItem: I am Tab2</>)
+}
+
+const Tab3 = () => {
+    return (<>TabItem: I am Tab3</>)
 }
 
 export default TabsDemo;

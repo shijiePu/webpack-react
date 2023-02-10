@@ -14,8 +14,8 @@ const Antd = () => {
   const [treeData, setTreeData] = useState([])
   const [showTreeData, setShowTreeData] = useState(axiosData.response)
   const [levelItem, setLevelItem] = useState([])
-  const [currLevelItem, setCurrLevelItem] = useState(null)
-  const [checkedKeys, setcheckedKeys] = useState([])
+  const [currLevelItem, setCurrLevelItem] = useState<{ [key: string]: any }>({})
+  const [checkedKeys, setcheckedKeys] = useState<any[]>([])
   const [cannotDelIds, setCannotDelIds] = useState([])
   // todo 下级时 children中有的ID 需要拎出来？
 
