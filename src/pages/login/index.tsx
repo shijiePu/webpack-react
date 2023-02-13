@@ -24,7 +24,9 @@ const LoginForm: FC = () => {
         sessionStorage.setItem("user", username);
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
-        navigate("/home");
+        navigate("/home", { replace: true });
+        // window.history.pushState({}, "", "/home");
+        
       } catch (e) {}
       return;
     }

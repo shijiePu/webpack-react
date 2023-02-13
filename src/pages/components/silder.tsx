@@ -1,5 +1,5 @@
 import React from "react";
-import { Link_Config } from "@/config/router";
+import { Link_Config } from "@/config/navConfig";
 import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const NarBar = () => {
       children: children.map((child) => {
         const { id: subKey, path, label } = child;
         const labelLink = (
-          <Link key={subKey} to={path}>
+          <Link key={subKey} to={"/home" + path}>
             {label}
           </Link>
         );

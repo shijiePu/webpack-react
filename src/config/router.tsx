@@ -1,6 +1,5 @@
-import { Navigate, RouteObject } from "react-router-dom";
-import { lazy } from "react";
-import HomePage from "@/pages/home";
+import { RouteObject } from "react-router-dom";
+import Home from "@/pages/home";
 import ArcoDesign from "@/pages/ArcoDesign";
 import AntdDesign from "@/pages/antDesign";
 import GroupsDemo from "@/pages/componentDemo/groups";
@@ -9,75 +8,8 @@ import AntdDesignChild from "@/pages/AntdDesignChild";
 import AntdDesignGrandson from "@/pages/AntdDesignGrandson";
 import AntdDesignChild2 from "@/pages/AntdDesignChild2";
 import NotFound from "@/pages/NotFound";
-import {
-  LaptopOutlined,
-  NotificationOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
 import Login from "@/pages/login";
-const Link_Config = [
-  {
-    name: "unitDemo",
-    icon: UserOutlined,
-    id: "unitDemo",
-    children: [
-      {
-        path: "/unitDemo/Group",
-        label: "GroupsDemo",
-        id: "GroupsDemo",
-      },
-      {
-        path: "/unitDemo/tabs",
-        label: "tabsDemo",
-        id: "tabsDemo",
-      },
-    ],
-  },
-  {
-    name: "antdDesignChild",
-    icon: UserOutlined,
-    id: "antdDesignChild",
-    children: [
-      {
-        path: "/antdDesign/child/:asjkdhjkas",
-        label: "antdDesignChild",
-        id: "antdChild",
-      },
-      {
-        path: "/antdDesign/child2",
-        label: "Child2",
-        id: "antdChild2",
-      },
-    ],
-  },
-  {
-    name: "start...",
-    children: [
-      { path: "/", label: "HomePage", id: "home" },
-      {
-        path: "/ArcoDesign",
-        label: "ArcoDesign",
-        id: "ArcoDesign",
-      },
-      {
-        path: "/ArcoDesign",
-        label: "antdDesign",
-        id: "antdDesign",
-      },
-    ],
-    icon: NotificationOutlined,
-    id: "start",
-  },
-  {
-    name: "about",
-    icon: LaptopOutlined,
-    id: "about",
-    children: [
-      { path: "/teams/Idisnew", label: "teamIdIsNew", id: "teamIdisnew" },
-      { path: "/teams/new", label: "newTeam", id: "newTeam" },
-    ],
-  },
-];
+
 // todo
 // 我们不一定要全部将路由定义在最外层.
 // 可以适当拆解出子路由，做一些比较特殊的功能，比如路由的条件渲染，鉴权等
@@ -90,12 +22,13 @@ const Link_Config = [
 
 const ROUTER_CONFIG: RouteObject[] = [
   {
-    path: "/",
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
     children: [
-      {
-        path: "login",
-        element: <Login />,
-      },
       {
         path: "unitDemo",
         children: [
@@ -110,7 +43,7 @@ const ROUTER_CONFIG: RouteObject[] = [
         ],
       },
       {
-        path: "/ArcoDesign",
+        path: "ArcoDesign",
         element: <ArcoDesign />,
       },
       //  注意，使用命令式创建嵌套路由时
@@ -118,7 +51,7 @@ const ROUTER_CONFIG: RouteObject[] = [
       // 否则按照react-router 的路由匹配方式是无法匹配上内部嵌套的子路由的
       //   <Route path="/teams/*" element={<Teams />} />
       {
-        path: "/antdDesign",
+        path: "antdDesign",
         element: <AntdDesign />,
         children: [
           {
@@ -140,6 +73,8 @@ const ROUTER_CONFIG: RouteObject[] = [
         ],
       },
     ],
+
+    // errorElement: <NotFound />,
   },
   {
     path: "*",
@@ -147,4 +82,4 @@ const ROUTER_CONFIG: RouteObject[] = [
   },
 ];
 
-export { ROUTER_CONFIG, Link_Config };
+export { ROUTER_CONFIG };

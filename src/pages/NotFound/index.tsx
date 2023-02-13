@@ -2,7 +2,7 @@ import { Button } from "antd"
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
-const homePagePath = "/"
+const homePagePath = "/home"
 const notFound = () => {
 
     // isBack 初始值为false  为true时渲染 Navigate 组件 

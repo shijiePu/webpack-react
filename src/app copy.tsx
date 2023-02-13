@@ -6,7 +6,8 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
-import { ROUTER_CONFIG, Link_Config } from "./config/router";
+import { ROUTER_CONFIG } from "./config/router";
+import { Link_Config } from "./config/navConfig";
 import { Layout, Menu } from "antd";
 import RouterNormal from "./RouterNormal";
 import PathInfo from "@/pages/HeaderInfo";
