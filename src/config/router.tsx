@@ -26,7 +26,8 @@ const ROUTER_CONFIG: RouteObject[] = [
     element: <Login />,
   },
   {
-    path: "/home",
+    path: "/home/*",
+    index: false,
     element: <Home />,
     children: [
       {

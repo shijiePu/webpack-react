@@ -1,17 +1,27 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import NarBar from "@/pages/components/silder";
 import PageHeader from "@/pages/components/header";
 import RouterNormal from "@/RouterNormal";
-
 import { Layout } from "antd";
-
+import { useRef } from "react";
 const { Header, Footer, Content } = Layout;
 
+// 路由鉴权组件
+const Appraisal = ({ children }: any) => {
+  const hasUserInfo = sessionStorage.getItem("user");
+  return hasUserInfo ? children : <Navigate to="/login" />;
+};
+
 const Home = () => {
-  const location = useLocation();
-  // const matches = useMatch()
-  console.log("homePage render~~", location);
-  // console.log('homePage render~~', location)
+  console.log("首页homePage render~~");
+  const hasUserInfo = useRef(sessionStorage.getItem("user"));
+
+  
+  console.log(
+    "*************************",
+    { hasUserInfo },
+    !hasUserInfo.current ? "Login" : "Layout "
+  );
   return (
     <>
       <Layout>

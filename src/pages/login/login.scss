@@ -1,9 +1,10 @@
+
 .login-layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: auto;
-  background: url(../../assets/img/login-bg.svg) @component-background no-repeat center 110px;
+  background: url(../../assets/img/login-bg.svg) no-repeat center 110px;
   background-size: 100%;
   overflow: hidden;
   min-width: 380px;
@@ -34,3 +35,4 @@
     font-size: 26px;
   }
 }
+

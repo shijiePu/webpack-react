@@ -1,8 +1,11 @@
 import { useEffect, FC } from "react";
 import { Form, Input, Button, message } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+// import ReactCanvasNest from 'react-canvas-nest'
 // import { OidcLogin } from '@/pages/login/OidcLogin'
 import { useNavigate } from "react-router-dom";
+// import Logo from '@/assets/image/login.webp'
+import './login.scss'
 
 const LoginForm: FC = () => {
   useEffect(() => {
@@ -26,7 +29,6 @@ const LoginForm: FC = () => {
         sessionStorage.setItem("password", password);
         navigate("/home", { replace: true });
         // window.history.pushState({}, "", "/home");
-        
       } catch (e) {}
       return;
     }
@@ -78,6 +80,18 @@ const LoginForm: FC = () => {
 
   return (
     <div className="login-layout" id="login-layout">
+      {/* <ReactCanvasNest
+        config={{
+          pointColor: floatColor,
+          lineColor: floatColor,
+          pointOpacity: 0.6,
+        }}
+        style={{ zIndex: 1 }}
+      /> */}
+      <div className="logo-box">
+        {/* <img alt="" className="logo" src={Logo} /> */}
+        <span className="logo-name">React-Antd Multi-Tab</span>
+      </div>
       {FormView}
     </div>
   );
