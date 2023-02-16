@@ -28,7 +28,6 @@ const LoginForm: FC = () => {
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
         navigate("/home", { replace: true });
-        // window.history.pushState({}, "", "/home");
       } catch (e) {}
       return;
     }

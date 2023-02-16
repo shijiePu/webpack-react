@@ -1,14 +1,10 @@
-
-import RoutesV6 from "./RoutesV6";
+import { useRoutes } from "react-router-dom";
+import { ROUTER_CONFIG } from "./config/router";
 import "./app.scss";
 
 function App() {
-
-  return (
-    <div className="App">
-      <RoutesV6 />
-    </div>
-  );
+  const appRoutesElement = useRoutes(ROUTER_CONFIG);
+  return <div className="App">{appRoutesElement}</div>;
 }
 
 export default App;
