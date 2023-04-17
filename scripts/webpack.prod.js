@@ -63,6 +63,6 @@ module.exports = merge(common, {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "assets/css/[hash:8].css",
-        }),
+        })
     ],
 });

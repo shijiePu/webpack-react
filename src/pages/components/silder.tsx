@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
 const NarBar = () => {
-  const getItems = Link_Config.map((item) => {
+  const getItems = Link_Config?.map((item) => {
     const { name, children, icon, id } = item;
     const key = id;
     return {
       key,
       icon: React.createElement(icon),
       label: name,
-      children: children.map((child) => {
+      children: children?.map((child) => {
         const { id: subKey, path, label } = child;
         const labelLink = (
           <Link key={subKey} to={"/home" + path}>

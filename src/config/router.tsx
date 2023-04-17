@@ -9,6 +9,7 @@ import AntdDesignGrandson from "@/pages/AntdDesignGrandson";
 import AntdDesignChild2 from "@/pages/AntdDesignChild2";
 import NotFound from "@/pages/NotFound";
 import Login from "@/pages/login";
+import TestMyBabel from "@/pages/testMyBabel";
 
 const ROUTER_CONFIG: RouteObject[] = [
   {
@@ -44,6 +45,10 @@ const ROUTER_CONFIG: RouteObject[] = [
       {
         path: "ArcoDesign",
         element: <ArcoDesign />,
+      },
+      {
+        path: "TestMyBabel",
+        element: <TestMyBabel />,
       },
       /**
        * 注意，使用命令式创建嵌套路由时

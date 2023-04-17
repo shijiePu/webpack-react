@@ -122,7 +122,7 @@ const Antd = () => {
     const { children } = row;
     const currentCheckAll: any = e.target.checked
     const currentIndeterminate: any = false
-    const currentCheckedKeys: any = e.target.checked ? children.map((item: any) => item.nodeId) : []
+    const currentCheckedKeys: any = e.target.checked ? children?.map((item: any) => item.nodeId) : []
 
     const newcurrLevelItem = {
       ...row,
@@ -158,7 +158,7 @@ const Antd = () => {
       </Checkbox>
       <CheckboxGroup value={checkedKeys} disabled={disabled} onChange={(keys) => onCheckChange(keys, item)}>
         {
-          children.map((child: any) => {
+          children && children.map((child: any) => {
             return (<>
               <Checkbox value={child.nodeId}>
                 <div style={{ width: '100px' }}>

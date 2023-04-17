@@ -51,8 +51,9 @@ module.exports = merge(common, {
           "less-loader",
         ],
         include: /node_modules/,
-      }
-    ]
+      },
+    ],
   },
+  plugins: [require("../src/babel/index")],
   stats: "errors-only", // Webpack 在编译的时候只输出错误日志，终端更清爽
 });

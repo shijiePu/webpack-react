@@ -49,9 +49,9 @@ export const Link_Config = [
           id: "ArcoDesign",
         },
         {
-          path: "/ArcoDesign",
-          label: "antdDesign",
-          id: "antdDesign",
+          path: "/TestMyBabel",
+          label: "TestMyBabel",
+          id: "TestMyBabel",
         },
       ],
       icon: NotificationOutlined,

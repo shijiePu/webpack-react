@@ -35,7 +35,7 @@ function App() {
       key,
       icon: React.createElement(icon),
       label: name,
-      children: children.map((child) => {
+      children: children?.map((child) => {
         const { id: subKey, path, label } = child;
         const labelLink = (
           <Link key={subKey} to={path}>
