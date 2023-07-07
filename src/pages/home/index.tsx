@@ -36,6 +36,7 @@ const Home = () => {
               {/* 而当前匹配到所有子路由会在routeContext 的value中储存 */}
               {/* Outlet 就存在里面 */}
               {/* 这个逻辑是支持嵌套的 */}
+              {/* 我是首页 */}
               <Outlet />
             </Content>
             <Footer className="app-footer">
