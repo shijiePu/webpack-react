@@ -2,13 +2,14 @@
 
 :root {
   // 定义主题颜色
-  --theme-color: #165dff;
+  --theme-color: #74ace0;
   --app-background-color: #e4e6eb;
 
   --header-background-color: rgb(137, 202, 180);
   --header-border-color: #ccc;
 
-  --rooter-background-color: #259133;
+  --rooter-background-color: #7fe77f;
+  
 }
 
 .app-sider {
@@ -37,6 +38,25 @@
   .contene-contain {
     padding: 20px;
     color: var(--theme-color);
+    overflow-y: auto;
+    /*定义滚动条高宽及背景高宽分别对应横竖滚动条的尺寸*/
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+      background-color: #f5f5f5;
+    }
+    /*定义滚动条轨道内阴影+圆角*/
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #f5f5f5;
+    }
+    /*定义滑块内阴影+圆角*/
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #555;
+    }
   }
 
   .app-footer {
@@ -53,3 +73,11 @@
   height: 64px;
   margin-bottom: 20px;
 }
+
+// ::-webkit-scrollbar    //滚动条整体部分
+// ::-webkit-scrollbar-button   //滚动条两端的按钮
+// ::-webkit-scrollbar-track   // 外层轨道
+// ::-webkit-scrollbar-track-piece    //内层轨道，滚动条中间部分（除去）
+// ::-webkit-scrollbar-thumb //滚动条里面可以拖动的那个
+// ::-webkit-scrollbar-corner   //边角
+// ::-webkit-resizer   ///定义右下角拖动块的样式

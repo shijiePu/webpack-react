@@ -6,6 +6,9 @@ import TabsDemo from "@/pages/componentDemo/tabs";
 import NotFound from "@/pages/NotFound";
 import Login from "@/pages/login";
 import TestMyBabel from "@/pages/testMyBabel";
+import ConceptsOfSnapshots from "@/pages/conceptsOfSnapshots";
+import StateManagement from "@/pages/stateManagement";
+
 
 const ROUTER_CONFIG: RouteObject[] = [
   {
@@ -39,8 +42,16 @@ const ROUTER_CONFIG: RouteObject[] = [
         element: <CacheCompont />,
       },
       {
-        path: "TestMyBabel",
+        path: "testMyBabel",
         element: <TestMyBabel />,
+      },
+      {
+        path: "conceptsOfSnapshots",
+        element: <ConceptsOfSnapshots />,
+      },
+      {
+        path: "stateManagement",
+        element: <StateManagement />,
       },
       /**
        * 注意，使用命令式创建嵌套路由时

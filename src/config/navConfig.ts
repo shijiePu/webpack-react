@@ -31,6 +31,8 @@ export const Link_Config = [
         id: "cacheCompont",
       },
       { path: "/teams/Idisnew", label: "路由的嵌套写法", id: "teamIdisnew" },
+      { path: "/conceptsOfSnapshots", label: "快照概念", id: "conceptsOfSnapshots" },
+      { path: "/stateManagement", label: "状态管理", id: "stateManagement" },
     ],
     icon: NotificationOutlined,
     id: "start",
