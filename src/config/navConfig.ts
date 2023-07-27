@@ -33,6 +33,8 @@ export const Link_Config = [
       { path: "/teams/Idisnew", label: "路由的嵌套写法", id: "teamIdisnew" },
       { path: "/conceptsOfSnapshots", label: "快照概念", id: "conceptsOfSnapshots" },
       { path: "/stateManagement", label: "状态管理", id: "stateManagement" },
+      { path: "/refsCb", label: "ref回调", id: "refsCb" },
+      { path: "/effect", label: "useEffect打印两次", id: "effect" },
     ],
     icon: NotificationOutlined,
     id: "start",

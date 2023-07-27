@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { colorContext } from "../taskContext";
+import { colorContext } from "@/modals/appContext";
 import { useContext } from "react";
 
 const listItem = (props) => {
@@ -20,10 +20,11 @@ const listItem = (props) => {
       id: id,
     });
   };
+  // 如果没有 Context.Provider...组件 ， 存的值应该是一个变量， 直接通过useContext获取
   const color = useContext(colorContext);
 
   return (
-    <li  style={{ backgroundColor: color[props.index % 2] }}>
+    <li style={{ backgroundColor: color[props.index % 2] }}>
       name:{props.name}
       <Button size="small" onClick={() => editTask(props.id, props.name)}>
         编辑
