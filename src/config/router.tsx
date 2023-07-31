@@ -10,6 +10,8 @@ import ConceptsOfSnapshots from "@/pages/conceptsOfSnapshots";
 import StateManagement from "@/pages/stateManagement";
 import RefsTest from "@/pages/refsTest"
 import EffectTwice from "@/pages/effectTwice"
+import Square from "@/pages/square"
+
 
 
 const ROUTER_CONFIG: RouteObject[] = [
@@ -63,7 +65,10 @@ const ROUTER_CONFIG: RouteObject[] = [
         path: "effect",
         element: <EffectTwice />,
       },
-      
+      {
+        path: "square",
+        element: <Square />,
+      },
       /**
        * 注意，使用命令式创建嵌套路由时
        * 路由父级后面必须加上 /* 用于匹配后续的任意子路由，

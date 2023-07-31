@@ -35,6 +35,8 @@ export const Link_Config = [
       { path: "/stateManagement", label: "状态管理", id: "stateManagement" },
       { path: "/refsCb", label: "ref回调", id: "refsCb" },
       { path: "/effect", label: "useEffect打印两次", id: "effect" },
+      { path: "/square", label: "井子棋", id: "square" },
+      
     ],
     icon: NotificationOutlined,
     id: "start",

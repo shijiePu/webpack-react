@@ -4,6 +4,7 @@ import PageHeader from "@/pages/components/header";
 import RouterNormal from "@/RouterNormal";
 import { Layout } from "antd";
 import { useRef } from "react";
+import PointerPostion from "@/components/pointerPosition";
 const { Header, Footer, Content } = Layout;
 
 // 路由鉴权组件
@@ -23,6 +24,7 @@ const Home = () => {
   );
   return (
     <>
+      <PointerPostion></PointerPostion>
       <Appraisal>
         <Layout>
           <NarBar />
