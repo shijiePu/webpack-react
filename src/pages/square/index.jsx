@@ -6,15 +6,25 @@ function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
-  const handleClick = (i) => {
+  const handleClick = async (i) => {
     if (squares[i] || calculateWinner(squares)) {
       return;
     }
-    console.log("handleClick", xIsNext);
     const nextSquares = squares.slice();
     nextSquares[i] = !!xIsNext ? "X" : "O";
-    setSquares(nextSquares);
+    await setSquares(nextSquares);
+    test();
+    console.log("继续运行了");
     setXIsNext(!xIsNext);
+  };
+
+  const test = async () => {
+    try {
+      await console.log("test");
+      throw Error("抛出错误");
+    } catch {
+      console.error('catch Error');
+    }
   };
 
   const winner = calculateWinner(squares);

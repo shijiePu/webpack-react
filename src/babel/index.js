@@ -1,11 +1,13 @@
 // babel-template 用于将字符串形式的代码来构建AST树节点
 const template = require('babel-template');
-
+console.log('babel-template');
 const { tryTemplate, catchConsole, mergeOptions, matchesFile } = require('./util');
 
 module.exports = function (babel) {
+  console.log('通过babel 拿到 types 对象，操作 AST 节点，比如创建、校验、转变等');
   // 通过babel 拿到 types 对象，操作 AST 节点，比如创建、校验、转变等
   let types = babel.types;
+  console.log('babel',babel.types)
 
   // visitor：插件核心对象，定义了插件的工作流程，属于访问者模式
   const visitor = {
@@ -25,7 +27,7 @@ module.exports = function (babel) {
 
       // 获取编译目标文件的路径，如：E:\myapp\src\App.vue
       const filePath = this.filename || this.file.opts.filename || 'unknown';
-
+      console.log('获取编译目标文件的路径',filePath);
       // 在排除列表的文件不编译
       if (matchesFile(options.exclude, filePath)) {
         return;
@@ -95,6 +97,9 @@ module.exports = function (babel) {
       info.body = [tryNode];
     }
   };
+
+
+  console.log('visitor',visitor)
   return {
     name: 'babel-plugin-await-add-trycatch',
     visitor

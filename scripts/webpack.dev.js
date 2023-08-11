@@ -1,6 +1,8 @@
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 
+require("./index.js");
+
 module.exports = merge(common, {
   mode: "development", // 开发模式
   devServer: {
@@ -14,7 +16,7 @@ module.exports = merge(common, {
     // 插件的执行顺序从右到左
     rules: [
       {
-        test: /\.(css|scss|sass)$/,
+        test: /\.(css|scss|sass|less)$/,
         use: [
           "style-loader",
           "css-loader",
@@ -24,36 +26,16 @@ module.exports = merge(common, {
               postcssOptions: {
                 plugins: [["autoprefixer"]],
               },
-              // module:{
-              //   auto:true,
-              //   localIdentName:"[path][name]__[local]"
-              // }
             },
           },
           "sass-loader",
+          "less-loader"
         ],
         // 排除 node_modules 目录
         exclude: /node_modules/,
       },
-      {
-        test: /\.less$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [["autoprefixer"]],
-              },
-            },
-          },
-          "less-loader",
-        ],
-        include: /node_modules/,
-      },
     ],
   },
   plugins: [require("../src/babel/index")],
-  stats: "errors-only", // Webpack 在编译的时候只输出错误日志，终端更清爽
+  // stats: "errors-only", // Webpack 在编译的时候只输出错误日志，终端更清爽
 });

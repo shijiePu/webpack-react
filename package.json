@@ -2,7 +2,7 @@
   "name": "webpack-react",
   "version": "0.1.0",
   "private": true,
-  "description": "windowns手动搭建一个react项目",
+  "description": "windowns7手动搭建一个react项目",
   "main": "index.js",
   "devDependencies": {
     "@arco-design/web-react": "^2.42.0",
@@ -17,7 +17,9 @@
     "@types/react-dom": "^18.0.9",
     "antd": "^5.0.2",
     "autoprefixer": "^10.4.13",
+    "babel-cli": "^6.0.0",
     "babel-loader": "^9.1.0",
+    "babel-register": "^6.26.0",
     "chalk": "^4.1.2",
     "core-js": "^3.26.1",
     "cross-env": "^7.0.3",
@@ -45,11 +47,14 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve -c scripts/webpack.dev.js",
     "build": "npm run ts:checker && cross-env NODE_ENV=production webpack -c scripts/webpack.prod.js",
-    "ts:checker": "tsc --noEmit"
+    "ts:checker": "tsc --noEmit",
+    "babel": "babel scripts -d lib"
   },
   "author": "psj",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.0.0",
+    "babel-plugin-await-add-trycatch": "^1.0.1",
     "babel-template": "^6.26.0",
     "deepmerge": "^4.3.1",
     "lodash": "^4.17.21",
