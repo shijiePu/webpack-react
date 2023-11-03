@@ -1,16 +1,17 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import Home from "@/pages/home";
-import CacheCompont from "@/pages/cacheCompont";
+import CacheCompont from "@/pages/study/cacheCompont";
 import GroupsDemo from "@/pages/componentDemo/groups";
 import TabsDemo from "@/pages/componentDemo/tabs";
 import NotFound from "@/pages/NotFound";
 import Login from "@/pages/login";
-import TestMyBabel from "@/pages/testMyBabel";
-import ConceptsOfSnapshots from "@/pages/conceptsOfSnapshots";
+import TestMyBabel from "@/pages/study/testMyBabel";
+import ConceptsOfSnapshots from "@/pages/study/conceptsOfSnapshots";
 import StateManagement from "@/pages/stateManagement";
-import RefsTest from "@/pages/refsTest"
-import EffectTwice from "@/pages/effectTwice"
+import RefsTest from "@/pages/study/refsTest"
+import EffectTwice from "@/pages/study/effectTwice"
 import Square from "@/pages/square"
+import RefToPrpos from "@/pages/refToPrpos"
 
 
 
@@ -60,6 +61,10 @@ const ROUTER_CONFIG: RouteObject[] = [
       {
         path: "refsCb",
         element: <RefsTest />,
+      },
+      {
+        path: "refToPrpos",
+        element: <RefToPrpos />,
       },
       {
         path: "effect",

@@ -34,6 +34,7 @@ export const Link_Config = [
       { path: "/conceptsOfSnapshots", label: "快照概念", id: "conceptsOfSnapshots" },
       { path: "/stateManagement", label: "状态管理", id: "stateManagement" },
       { path: "/refsCb", label: "ref回调", id: "refsCb" },
+      { path: "/refToPrpos", label: "ref传值", id: "refToPrpos" },
       { path: "/effect", label: "useEffect打印两次", id: "effect" },
       { path: "/square", label: "井子棋", id: "square" },
       
