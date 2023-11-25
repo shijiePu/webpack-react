@@ -37,6 +37,7 @@ export const Link_Config = [
       { path: "/refToPrpos", label: "ref传值", id: "refToPrpos" },
       { path: "/effect", label: "useEffect打印两次", id: "effect" },
       { path: "/square", label: "井子棋", id: "square" },
+      { path: "/errorBoundary", label: "错误边界", id: "errorBoundary" },
       
     ],
     icon: NotificationOutlined,

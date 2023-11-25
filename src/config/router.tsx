@@ -12,6 +12,7 @@ import RefsTest from "@/pages/study/refsTest"
 import EffectTwice from "@/pages/study/effectTwice"
 import Square from "@/pages/square"
 import RefToPrpos from "@/pages/refToPrpos"
+import ErrorBDView from "@/pages/errorBoundary";
 
 
 
@@ -73,6 +74,10 @@ const ROUTER_CONFIG: RouteObject[] = [
       {
         path: "square",
         element: <Square />,
+      },
+      {
+        path: "errorBoundary",
+        element: <ErrorBDView />,
       },
       /**
        * 注意，使用命令式创建嵌套路由时
