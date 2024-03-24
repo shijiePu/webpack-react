@@ -3,12 +3,10 @@ const chalk = require("chalk");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-const ArcoWebpackPlugin = require("@arco-plugins/webpack-react");
 const pkgJSON = require("../package.json");
-console.log("process.env.NODE_ENV: ", process.env.NODE_ENV);
 
 module.exports = {
-  entry: path.resolve(__dirname, "../src/index.tsx"),
+  entry: path.resolve(__dirname, "../src/index"),
   output: {
     filename: "[name].[hash:8].js",
     path: path.resolve(__dirname, "../dist"),
@@ -16,7 +14,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"], //
     alias: {
       "@": path.resolve(__dirname, "../src"),
     },
@@ -25,25 +23,24 @@ module.exports = {
     rules: [
       {
         test: /\.(tsx|jsx)?$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: [
-                [
-                  "@babel/preset-env", // 预制配置
-                  {
-                    corejs: {
-                      version: 3,
-                    },
-                    useBuiltIns: "usage", // 按需引入 pollyfill
+        use: [{
+          loader: "babel-loader",
+          options: {
+            presets: [
+              [
+                "@babel/preset-env", // 预制配置
+                {
+                  corejs: {
+                    version: 3,
                   },
-                ],
-                "@babel/preset-react", // React 环境
+                  useBuiltIns: "usage", // 按需引入 pollyfill
+                },
               ],
-              plugins: ["@babel/plugin-transform-runtime"],
-            },
+              "@babel/preset-react", // React 环境
+            ],
+            plugins: ["@babel/plugin-transform-runtime"],
           },
+        },
         ],
         use: ["ts-loader"],
         exclude: /node_modules/,
@@ -78,9 +75,9 @@ module.exports = {
       },
       minify: "auto",
     }),
-    new ProgressBarPlugin({
-      format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
-    }),
-    new ArcoWebpackPlugin(),
+    // new ProgressBarPlugin({
+    //   format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
+    // }),
+    // new ArcoWebpackPlugin(),
   ],
 };

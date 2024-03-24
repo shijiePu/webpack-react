@@ -14,14 +14,6 @@ const Appraisal = ({ children }: any) => {
 };
 
 const Home = () => {
-  console.log("首页homePage render~~");
-  const hasUserInfo = useRef(sessionStorage.getItem("user"));
-
-  console.log(
-    "*************************",
-    { hasUserInfo },
-    !hasUserInfo.current ? "Login" : "Layout "
-  );
   return (
     <>
       <PointerPostion></PointerPostion>

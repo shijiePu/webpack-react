@@ -1,7 +1,7 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import Home from "@/pages/home";
 import CacheCompont from "@/pages/study/cacheCompont";
-import GroupsDemo from "@/pages/componentDemo/groups";
+import FormDemo from "@/pages/componentDemo/from";
 import TabsDemo from "@/pages/componentDemo/tabs";
 import NotFound from "@/pages/NotFound";
 import Login from "@/pages/login";
@@ -34,8 +34,8 @@ const ROUTER_CONFIG: RouteObject[] = [
         path: "unitDemo",
         children: [
           {
-            path: "Group",
-            element: <GroupsDemo />,
+            path: "form",
+            element: <FormDemo />,
           },
           {
             path: "tabs",

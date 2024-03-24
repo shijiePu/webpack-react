@@ -20,6 +20,7 @@
     "babel-cli": "^6.0.0",
     "babel-loader": "^9.1.0",
     "babel-register": "^6.26.0",
+    "babel-template": "^6.26.0",
     "chalk": "^4.1.2",
     "core-js": "^3.26.1",
     "cross-env": "^7.0.3",
@@ -45,8 +46,8 @@
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve -c scripts/webpack.dev.js",
-    "build": "npm run ts:checker && cross-env NODE_ENV=production webpack -c scripts/webpack.prod.js",
+    "dev": " NODE_ENV=development webpack serve -c scripts/webpack.dev.js",
+    "build": "npm run ts:checker &&  NODE_ENV=production webpack -c scripts/webpack.prod.js",
     "ts:checker": "tsc --noEmit",
     "babel": "babel scripts -d lib"
   },
@@ -55,7 +56,6 @@
   "dependencies": {
     "babel-core": "^6.0.0",
     "babel-plugin-await-add-trycatch": "^1.0.1",
-    "babel-template": "^6.26.0",
     "deepmerge": "^4.3.1",
     "lodash": "^4.17.21",
     "pl-export-excel": "^1.1.3",

@@ -6,14 +6,14 @@ import {
 
 export const Link_Config = [
   {
-    name: "组件库",
+    name: "组件",
     icon: UserOutlined,
     id: "unitDemo",
     children: [
       {
-        path: "/unitDemo/Group",
-        label: "GroupsDemo",
-        id: "GroupsDemo",
+        path: "/unitDemo/form",
+        label: "form表单",
+        id: "form表单",
       },
       {
         path: "/unitDemo/tabs",
