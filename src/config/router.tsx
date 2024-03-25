@@ -14,6 +14,7 @@ import Square from "@/pages/square"
 import RefToPrpos from "@/pages/refToPrpos"
 import ErrorBDView from "@/pages/errorBoundary";
 
+import Graphin from "@/pages/graphin"
 
 
 const ROUTER_CONFIG: RouteObject[] = [
@@ -85,6 +86,10 @@ const ROUTER_CONFIG: RouteObject[] = [
        * 否则按照react-router 的路由匹配方式是无法匹配上内部嵌套的子路由的
        * <Route path="/teams/*" element={<Teams />} />
       */
+      {
+        path: "graphin",
+        element: <Graphin />,
+      }
     ],
     // errorElement: <NotFound />,
   },

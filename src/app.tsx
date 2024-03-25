@@ -7,7 +7,7 @@ function App() {
   const appRoutesElement = useRoutes(ROUTER_CONFIG);
   return (
     <AppProvider>
-      <div className="App">{appRoutesElement}</div>
+      <div id="app" className="App">{appRoutesElement}</div>
     </AppProvider>
   );
 }

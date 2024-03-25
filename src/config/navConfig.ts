@@ -1,5 +1,5 @@
 import {
-  LaptopOutlined,
+  DotChartOutlined,
   NotificationOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -43,4 +43,16 @@ export const Link_Config = [
     icon: NotificationOutlined,
     id: "start",
   },
+  // {
+  //   name: "G6",
+  //   children: [
+  //     {
+  //       path: "/graphin",
+  //       label: "Graphin",
+  //       id: "useGraphin",
+  //     },
+  //   ],
+  //   icon: DotChartOutlined,
+  //   id: "Graphin",
+  // },
 ];

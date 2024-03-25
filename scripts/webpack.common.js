@@ -75,9 +75,15 @@ module.exports = {
       },
       minify: "auto",
     }),
+<<<<<<< Updated upstream
     // new ProgressBarPlugin({
     //   format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
     // }),
     // new ArcoWebpackPlugin(),
+=======
+    new ProgressBarPlugin({
+      format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
+    }),
+>>>>>>> Stashed changes
   ],
 };
