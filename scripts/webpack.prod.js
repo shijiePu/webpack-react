@@ -22,7 +22,22 @@ module.exports = merge(common, {
     ],
     splitChunks: {
       chunks: "all",
+      usedExports: true,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      }
     },
+    providedExports: true,
+
   },
   module: {
     rules: [
