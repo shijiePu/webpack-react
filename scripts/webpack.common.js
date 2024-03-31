@@ -2,7 +2,7 @@ const path = require("path");
 const chalk = require("chalk");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+// const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const pkgJSON = require("../package.json");
 
 module.exports = {
@@ -75,15 +75,9 @@ module.exports = {
       },
       minify: "auto",
     }),
-<<<<<<< Updated upstream
     // new ProgressBarPlugin({
     //   format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
     // }),
     // new ArcoWebpackPlugin(),
-=======
-    new ProgressBarPlugin({
-      format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
-    }),
->>>>>>> Stashed changes
   ],
 };
