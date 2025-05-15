@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const { Sider } = Layout;
 const NarBar = () => {
   const getItems = Link_Config?.map((item) => {
-    const { name, children, icon, id } = item;
+    const { name, children, icon, id, path } = item;
     const key = id;
-    return {
+    return children ? {
       key,
       icon: React.createElement(icon),
       label: name,
@@ -24,6 +24,12 @@ const NarBar = () => {
           label: labelLink,
         };
       }),
+    } : {
+      key,
+      icon: React.createElement(icon),
+      label: <Link key={key} to={path}>
+        {name}
+      </Link>,
     };
   });
   return (

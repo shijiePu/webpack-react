@@ -1,20 +1,9 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import Home from "@/pages/home";
-import CacheCompont from "@/pages/study/cacheCompont";
-import FormDemo from "@/pages/componentDemo/from";
-// import TabsDemo from "@/pages/componentDemo/tabs";
 import TabsDemo from "@/pages/manage/index";
 import NotFound from "@/pages/NotFound";
 import Login from "@/pages/login";
-import TestMyBabel from "@/pages/study/testMyBabel";
-import ConceptsOfSnapshots from "@/pages/study/conceptsOfSnapshots";
-import StateManagement from "@/pages/stateManagement";
-import RefsTest from "@/pages/study/refsTest"
-import EffectTwice from "@/pages/study/effectTwice"
-import Square from "@/pages/square"
-import RefToPrpos from "@/pages/refToPrpos"
 import ErrorBDView from "@/pages/errorBoundary";
-import Card from "@/pages/dshjf"
 import Welcome from '@/pages/home/welcome'
 
 
@@ -28,6 +17,10 @@ const ROUTER_CONFIG: RouteObject[] = [
     element: <Login />,
   },
   {
+    path: "/home",
+    element: <Welcome />,
+  },
+  {
     path: "/home/*",
     index: false,
     element: <Home />,
@@ -37,53 +30,8 @@ const ROUTER_CONFIG: RouteObject[] = [
         element: <Welcome />
       },
       {
-        path: "unitDemo",
-        children: [
-          {
-            path: "form",
-            element: <FormDemo />,
-          },
-          {
-            path: "tabs",
-            element: <TabsDemo />,
-          },
-          {
-            path: "card",
-            element: <Card />,
-          },
-        ],
-      },
-      {
-        path: "cacheCompont",
-        element: <CacheCompont />,
-      },
-      {
-        path: "testMyBabel",
-        element: <TestMyBabel />,
-      },
-      {
-        path: "conceptsOfSnapshots",
-        element: <ConceptsOfSnapshots />,
-      },
-      {
-        path: "stateManagement",
-        element: <StateManagement />,
-      },
-      {
-        path: "refsCb",
-        element: <RefsTest />,
-      },
-      {
-        path: "refToPrpos",
-        element: <RefToPrpos />,
-      },
-      {
-        path: "effect",
-        element: <EffectTwice />,
-      },
-      {
-        path: "square",
-        element: <Square />,
+        path: "manage",
+        element: <TabsDemo />,
       },
       {
         path: "errorBoundary",

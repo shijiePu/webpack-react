@@ -3,7 +3,6 @@ import NarBar from "@/pages/components/silder";
 import PageHeader from "@/pages/components/header";
 import RouterNormal from "@/RouterNormal";
 import { Layout } from "antd";
-import PointerPostion from "@/components/pointerPosition";
 const { Header, Footer, Content } = Layout;
 
 // 路由鉴权组件
@@ -15,7 +14,6 @@ const Appraisal = ({ children }: any) => {
 const Home = () => {
   return (
     <>
-      <PointerPostion></PointerPostion>
       <Appraisal>
         <Layout>
           <NarBar />
@@ -30,11 +28,10 @@ const Home = () => {
               {/* Outlet 就存在里面 */}
               {/* 这个逻辑是支持嵌套的 */}
               {/* 我是首页 */}
-              
               <Outlet />
             </Content>
             <Footer className="app-footer">
-              <RouterNormal />
+              {/* <RouterNormal /> */}
             </Footer>
           </Layout>
         </Layout>
