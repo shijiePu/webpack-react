@@ -1,5 +1,4 @@
 import {
-  DotChartOutlined,
   NotificationOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -20,6 +19,11 @@ export const Link_Config = [
         label: "tabsDemo",
         id: "tabsDemo",
       },
+      {
+        path: "/unitDemo/card",
+        label: "card",
+        id: "card",
+      },
     ],
   },
   {
@@ -38,21 +42,9 @@ export const Link_Config = [
       { path: "/effect", label: "useEffect打印两次", id: "effect" },
       { path: "/square", label: "井子棋", id: "square" },
       { path: "/errorBoundary", label: "错误边界", id: "errorBoundary" },
-      
+      // plop占位
     ],
     icon: NotificationOutlined,
     id: "start",
   },
-  // {
-  //   name: "G6",
-  //   children: [
-  //     {
-  //       path: "/graphin",
-  //       label: "Graphin",
-  //       id: "useGraphin",
-  //     },
-  //   ],
-  //   icon: DotChartOutlined,
-  //   id: "Graphin",
-  // },
 ];

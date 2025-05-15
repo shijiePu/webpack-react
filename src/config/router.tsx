@@ -14,7 +14,8 @@ import EffectTwice from "@/pages/study/effectTwice"
 import Square from "@/pages/square"
 import RefToPrpos from "@/pages/refToPrpos"
 import ErrorBDView from "@/pages/errorBoundary";
-
+import Card from "@/pages/dshjf"
+import Welcome from '@/pages/home/welcome'
 
 
 const ROUTER_CONFIG: RouteObject[] = [
@@ -32,6 +33,10 @@ const ROUTER_CONFIG: RouteObject[] = [
     element: <Home />,
     children: [
       {
+        path: '',
+        element: <Welcome />
+      },
+      {
         path: "unitDemo",
         children: [
           {
@@ -41,6 +46,10 @@ const ROUTER_CONFIG: RouteObject[] = [
           {
             path: "tabs",
             element: <TabsDemo />,
+          },
+          {
+            path: "card",
+            element: <Card />,
           },
         ],
       },
@@ -80,6 +89,14 @@ const ROUTER_CONFIG: RouteObject[] = [
         path: "errorBoundary",
         element: <ErrorBDView />,
       },
+      // plop占位
+      /**
+       * plop占位
+       * {
+       * path: "errorBoundary",
+       * element: <ErrorBDView />,
+       * },
+       */
       /**
        * 注意，使用命令式创建嵌套路由时
        * 路由父级后面必须加上 /* 用于匹配后续的任意子路由，

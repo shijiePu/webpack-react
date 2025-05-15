@@ -28,7 +28,7 @@
     "less": "^4.1.3",
     "less-loader": "^11.1.0",
     "mini-css-extract-plugin": "^2.7.0",
-    "plop": "^4.0.0",
+    "plop": "^4.0.1",
     "postcss": "^8.4.19",
     "postcss-loader": "^7.0.1",
     "progress-bar-webpack-plugin": "^2.1.0",
@@ -48,7 +48,6 @@
   "scripts": {
     "dev": " NODE_ENV=development webpack serve -c scripts/webpack.dev.js",
     "build": "npm run ts:checker &&  NODE_ENV=production webpack -c scripts/webpack.prod.js",
-    "ts:checker": "tsc --noEmit",
     "babel": "babel scripts -d lib",
     "plop": "plop"
   },

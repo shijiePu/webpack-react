@@ -33,7 +33,7 @@ module.exports = merge(common, {
         ],
         // 排除 node_modules 目录
         exclude: /node_modules/,
-      },
+      }
     ],
   },
   plugins: 

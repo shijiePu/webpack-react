@@ -1,0 +1,81 @@
+.icon {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+    background-color: blue;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    line-height: 28px;
+}
+
+.step-title {
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.step-content {
+    display: flex;
+}
+
+
+.divider {
+    height: auto;
+    border-inline-start: 1px solid rgba(5, 5, 5, 0.4);
+}
+
+.appr-card {
+    width: 400px;
+    height: auto;
+    border-bottom: .5px #ccc solid;
+    padding-bottom: 5px;
+}
+
+
+.card-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 28px;
+}
+
+.card-title {
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.state-card {
+    padding: 4px 6px;
+    font-size: 12px;
+}
+
+.state1 {
+    color: #205dbf;
+    background-color: #739fe7;
+}
+
+.state2 {
+    color: #ca9137;
+    background-color: #ffa10a75;
+}
+
+.state3 {
+    color: #E60923;
+    background-color: #bb7982;
+}
+
+.card-time,
+.card-desc {
+    color: #ccc;
+    font-size: 12px;
+    display: flex;
+    align-self: center;
+}
+
+.card-state{
+    margin-left: 20px;
+}

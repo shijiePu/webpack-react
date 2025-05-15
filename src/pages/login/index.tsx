@@ -6,7 +6,7 @@ import './login.scss'
 
 const LoginForm: FC = () => {
   // 触发登录方法
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: { username: string, password: string }) => {
     // 开发环境 mock
     console.log(values);
     if (process.env.NODE_ENV === "development") {
@@ -16,7 +16,7 @@ const LoginForm: FC = () => {
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("password", password);
         navigate("/home", { replace: true });
-      } catch (e) {}
+      } catch (e) { }
       return;
     }
   };
@@ -63,7 +63,7 @@ const LoginForm: FC = () => {
   return (
     <div className="login-layout" id="login-layout">
       <div className="logo-box">
-        <span className="logo-name">React-Antd Multi-Tab</span>
+        <span className="logo-name">登录</span>
       </div>
       {FormView}
     </div>

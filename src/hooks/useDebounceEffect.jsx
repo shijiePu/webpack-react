@@ -14,6 +14,8 @@ function useDebounceEffect(callback, delay = 200, deps) {
             clearTimeout(timer.current)
             timer.current = null;
         }, delay)
+
+        return clearTimeout(timeout.current)
     }, deps)
 
     /**

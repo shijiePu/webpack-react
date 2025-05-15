@@ -70,9 +70,7 @@ const Page = () => {
 
         </div>
         <div className='contant'>
-            <Contant
-
-            ></Contant>
+            <Contant></Contant>
         </div>
     </>)
 };

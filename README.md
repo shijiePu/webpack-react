@@ -9,11 +9,17 @@ hook：
 路由鉴权
 登录滑动验证
 
+
+# polp工具
+
+
+
+# 依赖包有涉及到修改
 onFilter 方法只能过滤第一层数据，不能过滤 children 中的数据，导致在树形表格的场景中，onFilter 不能满足需求
 在过滤逻辑中增加递归的处理逻辑
 
-table 支持过滤children 
-node_modules/antd/es/table/hooks/useFilter/index.js
+table 支持过滤children
+changed file1: node_modules/antd/es/table/hooks/useFilter/index.js
 
 ```js
 export function getFilterData(data, filterStates, childrenColumnName) {
@@ -50,4 +56,10 @@ export function getFilterData(data, filterStates, childrenColumnName) {
     return currentData;
   }, data);
 }
+```
+
+changed file2: node_modules/antd/es/table/Table.js
+所有getFilterData添加一个参数 childrenColumnName
+```js
+  getFilterData(agr1,ag2) =>  getFilterData(agr1,ag2,childrenColumnName) 
 ```

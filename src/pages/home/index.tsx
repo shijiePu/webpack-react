@@ -3,7 +3,6 @@ import NarBar from "@/pages/components/silder";
 import PageHeader from "@/pages/components/header";
 import RouterNormal from "@/RouterNormal";
 import { Layout } from "antd";
-import { useRef } from "react";
 import PointerPostion from "@/components/pointerPosition";
 const { Header, Footer, Content } = Layout;
 
@@ -31,6 +30,7 @@ const Home = () => {
               {/* Outlet 就存在里面 */}
               {/* 这个逻辑是支持嵌套的 */}
               {/* 我是首页 */}
+              
               <Outlet />
             </Content>
             <Footer className="app-footer">

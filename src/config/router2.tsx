@@ -29,8 +29,8 @@ export function OldTeam() {
     const { teamId } = useParams()
     return (
         <div className="border">
-            <h1>i am a OldTeam </h1>
-            <h1>my teamId : {teamId} </h1>
+            <h5>i am a OldTeam </h5>
+            <h5>my teamId : {teamId} </h5>
         </div>
     )
 }
@@ -38,7 +38,7 @@ export function OldTeam() {
 export function NewTeamForm() {
     return (
         <div className="border">
-            <h1> 我是NewTeamForm组件 </h1>
+            <h5> 我是NewTeamForm组件 </h5>
         </div>
     )
 }
