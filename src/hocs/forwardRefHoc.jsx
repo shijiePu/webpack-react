@@ -14,5 +14,3 @@ export function HOC(Comp) {
     return forwardRef((props, ref) => <Warp ref={ref} {...props} />)
 }
 
-// 转发ref
-
