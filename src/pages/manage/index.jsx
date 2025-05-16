@@ -6,7 +6,7 @@ const { Option } = Select;
 
 const Page = () => {
 
-    const [form] = Form.useForm(); 
+    const [form] = Form.useForm();
 
     const onFinish = (values) => {
         console.log('Received values from form: ', values);
@@ -18,7 +18,7 @@ const Page = () => {
 
     const onReset = () => {
         form.resetFields();
-      };
+    };
 
     const timerOptions = getTimer()
     const keywordsOptions = getKeywordsList()

@@ -1,6 +1,6 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import Home from "@/pages/home";
-import TabsDemo from "@/pages/manage/index";
+import Manage from "@/pages/manage";
 import NotFound from "@/pages/NotFound";
 import Login from "@/pages/login";
 import ErrorBDView from "@/pages/errorBoundary";
@@ -31,7 +31,7 @@ const ROUTER_CONFIG: RouteObject[] = [
       },
       {
         path: "manage",
-        element: <TabsDemo />,
+        element: <Manage />,
       },
       {
         path: "errorBoundary",

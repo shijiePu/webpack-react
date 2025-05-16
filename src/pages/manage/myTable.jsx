@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { DeleteOutlined } from '@ant-design/icons';
 import zhCN from "antd/lib/locale/zh_CN"
 import './index.css'
+import PermissionBtn from "@/components/PermissionBtn";
 
 function Dot({ status }) {
 
@@ -24,7 +25,6 @@ function Dot({ status }) {
     </>
 
 }
-
 
 const dataSource = getDataSource()
 const timerList = getTimer().map(item => ({ value: item.value, text: item.text }))
@@ -76,10 +76,18 @@ const _columns = [
         width: '240px',
         render: (value, record) => (
             <Space size="middle">
-                <Button onClick={() => send(record.key)}>发送</Button>
-                <Button onClick={() => edit(record.key)}>编辑</Button>
-                <Button onClick={() => copy(record.key)}>复制</Button>
-                <Button onClick={() => del(record.key)} icon={<DeleteOutlined />}></Button>
+                <PermissionBtn roles='admin' fallback={<Button>暂无权限</Button>}>
+                    <Button onClick={() => send(record.key)}>发送</Button>
+                </PermissionBtn>
+                <PermissionBtn roles={['admin', 'user']}>
+                    <Button onClick={() => edit(record.key)}>编辑</Button>
+                </PermissionBtn>
+                <PermissionBtn roles={['admin', 'user']}>
+                    <Button onClick={() => copy(record.key)}>复制</Button>
+                </PermissionBtn>
+                <PermissionBtn roles={['admin', 'user']}>
+                    <Button onClick={() => del(record.key)} icon={<DeleteOutlined />}></Button>
+                </PermissionBtn>
             </Space>
         ),
     }
@@ -129,7 +137,6 @@ export default function myTable(props) {
 
     }, [])
 
-    // rowSelection objects indicates the need for row selection
     const rowSelection = {
         onChange: (selectedRowKeys, selectedRows) => {
             setSelectedRowKeys(selectedRowKeys)
