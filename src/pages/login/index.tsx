@@ -2,7 +2,7 @@ import { useEffect, FC } from "react";
 import { Form, Input, Button, message } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import './login.scss'
+import './login.less'
 
 const LoginForm: FC = () => {
   // 触发登录方法

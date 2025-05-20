@@ -16,7 +16,7 @@ module.exports = merge(common, {
     // 插件的执行顺序从右到左
     rules: [
       {
-        test: /\.(css|scss|sass|less)$/,
+        test: /\.(css|sass|less)$/,
         use: [
           "style-loader",
           "css-loader",
@@ -33,7 +33,20 @@ module.exports = merge(common, {
         ],
         // 排除 node_modules 目录
         exclude: /node_modules/,
-      }
+      },
+      {
+        test: /.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          'sass-loader',
+        ],
+      },
     ],
   },
   plugins: 
