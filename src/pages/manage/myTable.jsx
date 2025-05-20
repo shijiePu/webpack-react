@@ -5,6 +5,7 @@ import { DeleteOutlined } from '@ant-design/icons';
 import zhCN from "antd/lib/locale/zh_CN"
 import './index.css'
 import PermissionBtn from "@/components/PermissionBtn";
+import { Modal as MyModal } from '@/components/modal'
 
 function Dot({ status }) {
 
@@ -127,6 +128,8 @@ export default function myTable(props) {
 
     const [selectedRowKeys, setSelectedRowKeys] = useState(0)
 
+    const [showModal, setShowModal] = useState(false)
+
 
     const timerOptions = useRef(null)
     const keywordsOptions = useRef(null)
@@ -162,10 +165,11 @@ export default function myTable(props) {
     }
 
     const updateHandle = () => {
-        message.open({
-            type: 'success',
-            content: '上传框架！',
-        });
+        setShowModal(true)
+        // message.open({
+        //     type: 'success',
+        //     content: '上传框架！',
+        // });
     }
 
 
@@ -177,7 +181,10 @@ export default function myTable(props) {
                 <Button onClick={addHandle}>批量发布</Button>
                 <Button onClick={delHandle}>批量删除</Button>
             </Space>
+
             <Button type="primary" onClick={updateHandle}>+上传框架</Button>
+
+
         </div>
         <Table
             // 勾选
@@ -197,5 +204,13 @@ export default function myTable(props) {
                 className="manage__pagination-style"
             />
         </ConfigProvider>
+
+        <MyModal
+            open={showModal}
+            title="title"
+        >
+            <h2>MyModal</h2>
+        </MyModal>
+
     </div>
 }
